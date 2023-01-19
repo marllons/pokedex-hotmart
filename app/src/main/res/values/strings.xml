@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+
+    <string name="pokemon_type_bug">bug</string>
+    <string name="pokemon_type_dark">dark</string>
+    <string name="pokemon_type_dragon">dragon</string>
+    <string name="pokemon_type_electric">electric</string>
+    <string name="pokemon_type_fairly">fairly</string>
+    <string name="pokemon_type_fighting">fighting</string>
+    <string name="pokemon_type_fire">fire</string>
+    <string name="pokemon_type_flying">flying</string>
+    <string name="pokemon_type_ghost">ghost</string>
+    <string name="pokemon_type_grass">grass</string>
+    <string name="pokemon_type_ground">ground</string>
+    <string name="pokemon_type_ice">ice</string>
+    <string name="pokemon_type_normal">normal</string>
+    <string name="pokemon_type_poison">poison</string>
+    <string name="pokemon_type_psychic">psychic</string>
+    <string name="pokemon_type_rock">rock</string>
+    <string name="pokemon_type_steel">steel</string>
+    <string name="pokemon_type_water">water</string>
+    <string name="pokedex">Pokédex</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
