@@ -52,7 +52,10 @@ class MainFragment : Fragment() {
     }
 
     private fun setConfigAdapter() {
-        binding.pokemons.adapter = pokemonPagingAdapter.withLoadStateFooter(PokemonLoaderPagingAdapter())
+        with(binding.pokemons) {
+            adapter = pokemonPagingAdapter.withLoadStateFooter(PokemonLoaderPagingAdapter())
+            scrollToPosition(0)
+        }
         initialViewState()
     }
 
