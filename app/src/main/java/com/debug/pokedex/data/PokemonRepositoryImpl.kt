@@ -1,22 +1,26 @@
 package com.debug.pokedex.data
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import com.debug.pokedex.Constants.PAGE_SIZE
 import com.debug.pokedex.data.api.PokemonApi
-import com.debug.pokedex.data.model.toPokemon
-import com.debug.pokedex.data.model.toPokemonBase
+import com.debug.pokedex.data.paging.PokedexPagingSource
 import com.debug.pokedex.domain.entity.Pokemon
-import com.debug.pokedex.domain.entity.PokemonBase
+import com.debug.pokedex.presenter.home.model.PokemonViewObject
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class PokemonRepositoryImpl @Inject constructor(
     private val pokemonApi: PokemonApi
-):PokemonRepository{
+) : PokemonRepository {
 
-    override suspend fun getPokemonList(): List<PokemonBase> {
-        return pokemonApi.getPokemonList().toPokemonBase()
+    override suspend fun getPokemon(): Flow<PagingData<PokemonViewObject>> {
+        return Pager(
+            config = PagingConfig(
+                pageSize = PAGE_SIZE
+            ),
+            pagingSourceFactory = { PokedexPagingSource(pokemonApi) }
+        ).flow
     }
-
-    override suspend fun getPokemon(id: String): Pokemon {
-        return pokemonApi.getPokemon(id).toPokemon()
-    }
-
 }

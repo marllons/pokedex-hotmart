@@ -37,7 +37,8 @@ class DetailFragment : Fragment() {
         with(binding) {
 
             pokemonImage.load(pokemon.image)
-            pokemonId.text = "#${pokemon.id.toString().padStart(3, '0')}"
+            val idPokemon = "#${pokemon.id.toString().padStart(3, '0')}"
+            pokemonId.text = idPokemon
 
             pokemonName.text = pokemon.name.replaceFirstChar(Char::titlecase)
             pokemonImage.load(pokemon.image)

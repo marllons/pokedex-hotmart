@@ -8,13 +8,5 @@ import javax.inject.Inject
 class GetPokemonUseCase @Inject constructor(
     private val repository: PokemonRepository
 ) {
-
-    suspend operator fun invoke(): List<Pokemon> {
-        return repository.getPokemonList().map {
-            val pokemonId: String = it.url.let { url ->
-                url.substringAfter("https://pokeapi.co/api/v2/pokemon/").substringBefore('/')
-            }
-            repository.getPokemon(pokemonId)
-        }
-    }
+    suspend operator fun invoke() = repository.getPokemon()
 }
