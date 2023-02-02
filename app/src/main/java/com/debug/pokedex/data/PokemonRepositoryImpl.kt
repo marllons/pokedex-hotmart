@@ -6,7 +6,6 @@ import androidx.paging.PagingData
 import com.debug.pokedex.Constants.PAGE_SIZE
 import com.debug.pokedex.data.api.PokemonApi
 import com.debug.pokedex.data.paging.PokedexPagingSource
-import com.debug.pokedex.domain.entity.Pokemon
 import com.debug.pokedex.presenter.home.model.PokemonViewObject
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
